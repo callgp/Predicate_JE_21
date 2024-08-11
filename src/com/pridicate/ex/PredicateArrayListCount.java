@@ -9,20 +9,19 @@ public class PredicateArrayListCount {
 	public static void main(String[] args) {
 		
 	
-	List<Integer> list=new ArrayList<>();
+	List<Country> list=new ArrayList<>();
 	
-	list.add(10);
-	list.add(5);
-	list.add(61);
-	list.add(2);
-	list.add(55);
+	list.add(new Country("Zimbavwe", 11111));
+	list.add(new Country("Zombia", 11113));
+	list.add(new Country("Norway", 11115));
+	list.add(new Country("Sweden", 11119));
 	
-	Predicate<Integer> predicate= num -> num>10;
+	Predicate<Country> predicate= c->c.getName().startsWith("Z");
 	
-	for(Integer number : list) {
+	for(Country cntry : list) {
 		
-		if(predicate.test(number)) {
-			System.out.println(number);
+		if(predicate.test(cntry)) {
+			System.out.println(cntry);
 		}
 	}
 	}
